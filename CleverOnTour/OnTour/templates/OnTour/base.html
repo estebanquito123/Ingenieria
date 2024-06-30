@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +18,11 @@
                     <li><a href="{% url 'index' %}" class="btn"><button>Inicio</button></a></li>
                     <li><a href="{% url 'servicios' %}" class="btn"><button>Servicios</button></a></li>
                     <li><a href="{% url 'nosotros' %}" class="btn"><button>Nosotros</button></a></li>
-                    <li><a href="{% url 'login' %}" class="btn"><button> Iniciar Sesion</button></a></li>
+                    {% if request.user.is_authenticated%}
+                        <li><a href="{% url 'perfil' %}" class="btn"><button>Perfil</button></a></li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}" class="btn"><button>Iniciar Sesion</button></a></li>
+                    {% endif %}
                 </ul>
             </nav> 
             <a onclick="openNav()" class="menu"><button>Menu</button></a>
