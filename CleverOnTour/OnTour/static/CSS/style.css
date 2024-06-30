@@ -289,3 +289,43 @@ h2 {
     margin-top: 30px;
     margin-bottom: 120px;
 }
+
+.contenedor-imagenes {
+    display: flex; /* Utilizamos flexbox para alinear las imágenes */
+    flex-wrap: wrap; /* Permitimos que las imágenes se envuelvan en filas */
+    justify-content: center; /* Centramos las imágenes horizontalmente */
+    flex-direction: row; /* Los elementos secundarios se colocan en una fila */
+    max-width: 120rem; /* Ancho máximo del contenedor de imágenes */
+    align-items: auto; /* Alineación de elementos secundarios (imágenes) */
+    height: auto; /* Altura automática para ajustarse al contenido */
+    margin-left: 200px;
+    margin-top: 100px;
+    margin-bottom: 125px;
+}
+
+.fila1 {
+    display: flex; /* Usamos flexbox para organizar las imágenes en filas */
+    width: 100%; /* Ancho de las filas */
+    height: auto; /* Altura automática para ajustarse al contenido */
+    max-width: 100%; /* Ancho máximo para que las imágenes no se desborden */
+}
+
+.imagen {
+    margin-right: 250px; /* Espacio entre las imágenes */
+    width: 400px; /* Ancho de las imágenes */
+    height: 300px; /* Altura ajustada automáticamente */
+}
+.text-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 500px;
+    margin-bottom: 110px;
+    margin-top: 100px;
+}
+.imagen2 {
+    height: auto;
+    width: auto;
+}

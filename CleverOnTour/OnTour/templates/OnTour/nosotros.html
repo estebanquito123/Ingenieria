@@ -1,0 +1,21 @@
+{% extends "OnTour/base.html" %} 
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="text-container">
+        <h1>¿Quienes somos?</h1>
+        <p> On Tour es una agencia de viajes prestadora de servicios con 20 años de experiencia en la venta de servicios de turismo, en su mayoría fuera del país.
+        Nuestro propósito como empresa es brindar comodidad y seguridad al momento de realizar salidas pedagógicas, giras de estudio y excursiones encargándonos de todos los asuntos necesarios para que nuestros clientes solo se preocupen de tener una buena experiencia.</p>
+        <img src="{% static 'IMG/logo.png' %}" alt="imagen" class="imagen2">
+    </div>
+    
+</body>
+</html>
+{% endblock %}

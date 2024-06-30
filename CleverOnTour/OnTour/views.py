@@ -16,3 +16,11 @@ def nosotros(request):
 def login(request):
     context={}
     return render(request,'OnTour/login.html', context)
+
+def aprendijzaje(request):
+    context={}
+    return render(request,'OnTour/aprendizaje.html', context)
+
+def imperdibles(request):
+    context={}
+    return render(request,'OnTour/imperdibles.html', context)

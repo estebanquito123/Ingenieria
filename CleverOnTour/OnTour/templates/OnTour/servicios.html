@@ -1,0 +1,21 @@
+{% extends "OnTour/base.html" %} 
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Servicios</h1>
+    <div class="contenedor-imagenes"> <!-- Contenedor de imágenes -->
+        <div class="fila1"> <!-- Fila 1 de imágenes -->
+            <a href="{% url 'imperdibles' %}"><img class="imagen" src="{% static 'IMG/ViajesImperdibles.png' %}" alt="Viajes Imperdibles"></a> <!-- Imagen 1 con enlace a la página LindoCat.html -->
+            <a href="{% url 'aprendizaje' %}"><img class="imagen" src="{% static 'IMG/ViajesAprendizaje.png' %}" alt="Viajes de aprendizaje"></a> <!-- Imagen 2 con enlace a la página Acana.html -->
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}
