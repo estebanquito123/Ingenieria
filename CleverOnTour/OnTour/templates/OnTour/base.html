@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+</head>
+<body>
+    <div class="fadein">
+        <header class="header">
+            <div class="logo">
+                <img src="{% static 'IMG/logo.png' %}" alt="Logo CleverOnTour">
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{% url 'index' %}" class="btn"><button>Inicio</button></a></li>
+                    <li><a href="{% url 'servicios' %}" class="btn"><button>Servicios</button></a></li>
+                    <li><a href="{% url 'nosotros' %}" class="btn"><button>Nosotros</button></a></li>
+                    <li><a href="{% url 'login' %}" class="btn"><button> Iniciar Sesion</button></a></li>
+                </ul>
+            </nav> 
+            <a onclick="openNav()" class="menu"><button>Menu</button></a>
+            <div class="overlay" id="mobile-menu">
+                <a onclick="closeNav()" href="" class="close">&times;</a>
+                <div class="overlay-content">
+                    <a href="{% url 'index' %}">Inicio</a>
+                    <a href="{% url 'servicios' %}">Servicios</a>
+                    <a href="{% url 'nosotros' %}">Nosotros</a> 
+                    <a href="{% url 'login' %}"> Iniciar Sesion</a>
+                </div>
+            </div>
+        </header>
+        {% block content %}
+
+        {% endblock %}
+</body>
+<footer class="pie-pagina">
+    <div class="grupo-2">
+        <small>&copy; 2024 <b>On Tour</b> -  Todos los Derechos Reservados.</small>
+    </div>
+</footer>
+</html>
