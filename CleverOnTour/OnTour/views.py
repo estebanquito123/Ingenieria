@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout
+from .forms import RegistroForm
 
 # Create your views here.
 def index(request):
@@ -44,3 +45,19 @@ def imperdibles(request):
 def exit(request):
     logout(request)
     return redirect('/')
+
+def registro(request):
+    if request.method == 'POST':
+        form = RegistroForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            messages.success(request, f'¡Tu cuenta ha sido creada! Ahora estás logueado como {username}')
+            return redirect('/')
+    else:
+        form = RegistroForm()
+    return render(request, 'registration/registro.html', {'form': form})
+
