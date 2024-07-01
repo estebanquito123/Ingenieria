@@ -28,6 +28,14 @@
                 <th>Email</th>
                 <td>{{ user.email }}</td>
             </tr>
+            <tr>
+                <th>Direccion</th>
+                <td>{{ user.direccion }}</td>
+            </tr>
+            <tr>
+                <th>Celular</th>
+                <td>{{ user.celular }}</td>
+            </tr>
         </table>
         <div class="button-container">
             <a href="{% url 'exit' %}" class="logout-button">Cerrar Sesión</a>

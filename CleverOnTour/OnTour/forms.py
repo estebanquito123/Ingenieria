@@ -1,31 +1,32 @@
-# forms.py
-# forms.py
 from django import forms
-from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from .models import Usuario
 from django.utils.translation import gettext_lazy as _
 
 class RegistroForm(UserCreationForm):
-    email = forms.EmailField(label=_('Correo electrónico'), required=True)
-    first_name = forms.CharField(label=_('Nombre'), max_length=30, required=True)
-    last_name = forms.CharField(label=_('Apellido'), max_length=30, required=True)
+    email = forms.EmailField(required=True, label=_('Correo electrónico'))
+    direccion = forms.CharField(max_length=255, required=True, label=_('Dirección'))
+    celular = forms.CharField(max_length=15, required=True, label=_('Celular'))
 
     class Meta:
-        model = User
-        fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
+        model = Usuario
+        fields = ['username', 'first_name', 'last_name', 'email', 'direccion', 'celular', 'password1', 'password2']
         labels = {
             'username': _('Nombre de usuario'),
+            'first_name': _('Nombre'),
+            'last_name': _('Apellido'),
             'password1': _('Contraseña'),
             'password2': _('Confirmar contraseña'),
         }
+        error_messages = {
+            'username': {
+                'unique': _("Este nombre de usuario ya está en uso."),
+            },
+            'email': {
+                'unique': _("Este correo electrónico ya está en uso."),
+            },
+        }
 
-    def save(self, commit=True):
-        user = super().save(commit=False)
-        user.email = self.cleaned_data['email']
-        user.first_name = self.cleaned_data['first_name']
-        user.last_name = self.cleaned_data['last_name']
-        if commit:
-            user.save()
-        return user
+
 
 

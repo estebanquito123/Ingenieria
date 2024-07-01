@@ -450,3 +450,13 @@ h1 {
     color: #fff;
     font-size: 16px;
 }
+
+.input-error {
+    border-color: red; /* Bordes del input en rojo si hay error */
+}
+
+.error-message {
+    color: red; /* Color del texto del mensaje de error */
+    font-size: 0.875em; /* Tamaño de la fuente del mensaje de error */
+    margin-top: 5px; /* Espacio entre el input y el mensaje de error */
+}
